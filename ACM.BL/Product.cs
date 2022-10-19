@@ -8,27 +8,21 @@ namespace ACM.BL
 {
     public class Product
     {
-        public string ProductName { get; set; }
-        public string ProductDescription { get; set; }
-        
-        public int CurrentPrice { get; set; }
+
+        public Product(int productId)
+        {
+                this.ProductId = productId;
+        }
+        public string ? ProductName { get; set; }
+        public string? ProductDescription { get; set; }
+        public decimal CurrentPrice { get; set; }
         public int ProductId { get; private set; }
-
-
         public bool Validate()
         {
-            bool isValid = string.IsNullOrWhiteSpace(ProductName) || CurrentPrice == null ? false : true;
+            bool isValid = string.IsNullOrWhiteSpace(ProductName) || CurrentPrice == 0 ? false : true;
             return isValid;
         }
 
-        public Product Retreive()
-        {
-            return new Product();
-        }
-
-        public bool Save()
-        {
-            return true;
-        }
+       
     }
 }

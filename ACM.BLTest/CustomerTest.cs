@@ -3,7 +3,7 @@ using ACM.BL;
 namespace ACM.BLTest
 {
     [TestClass]
-    public class UnitTest1
+    public class CustomerTest
     {
         [TestMethod]
         public void FullNameTestValid()
@@ -99,6 +99,7 @@ namespace ACM.BLTest
             Customer c2 = new Customer();
             {
                 c2.LastName = "Baggins";
+                c2.EmailAddress = null;
             
             }
             expected = false;
@@ -112,6 +113,7 @@ namespace ACM.BLTest
             Customer c3 = new Customer();
             {
                 c3.EmailAddress = "xyz@gmail.com";
+                c3.LastName = null;
 
             }
             expected = false;
